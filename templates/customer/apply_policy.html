@@ -1,0 +1,80 @@
+{% extends 'customer/customerbase.html' %}
+{% block content %}
+{%load static%}
+
+<head>
+  
+  <link href="http://netdna.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+  <style media="screen">
+    a:link {
+      text-decoration: none;
+    }
+
+    h6 {
+      text-align: center;
+    }
+
+    .row {
+      margin: 100px;
+    }
+       label #sidebar_btn {
+      z-index: 1;
+      color: #fff;
+      position: fixed;
+      cursor: pointer;
+      left: 300px;
+      padding-left: 60px;
+      margin-top:15px;
+      font-size: 20px;
+      
+      transition: 0.5s;
+      transition-property: color;
+    }
+    .th {
+      background-color: #336b87;
+    }
+  </style>
+</head>
+
+<div class="container">
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h3 class="text-center">Ketentuan Yang Tersedia</h3>
+    </div>
+    <table class="table table-hover table-striped table-bordered" id="dev-table" style="background-color: #336b87;">
+      <thead class="thead-dark" style="background-color: #336b87;">
+        <tr style="background-color: #336b87;">
+        <th style="background-color: #336b87;">#</th>
+          <th style="background-color: #336b87;">Nama</th>
+          <th style="background-color: #336b87;"> Kategori</th>
+          <th style="background-color: #336b87;"> Penuh Jaminan</th>
+          <th style="background-color: #336b87;"> Premium</th>
+          <th style="background-color: #336b87;"> Berlaku</th>
+          <th style="background-color: #336b87;"> Data Dibuat</th>
+          <th style="background-color: #336b87;"> Aksi</th>
+          
+        </tr>
+      </thead>
+      {% for t in policies %}
+      <tr>
+        <td> {{ forloop.counter }}</td>
+        <td> {{t.policy_name}}</td>
+        <td> {{t.category}}</td>
+        <td> {{t.sum_assurance}}</td>
+        <td> {{t.premium}}</td>
+        <td> {{t.tenure}} </td>
+        <td>{{t.creation_date}}</td>
+        <td><a class="btn btn-success btn-xs" href="{% url 'apply' t.id  %}">Apply</a></td>
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+</div>
+
+<br><br><br><br><br><br>
+{% endblock content %}

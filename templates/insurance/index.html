@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+
+<style>
+        .xyz{
+          margin-bottom: 0px;
+          background-image: url('{% static "image/homepage.jpg" %}');
+          background-size: cover;
+          background-repeat: no-repeat;
+        }
+        h2 {
+          color: #4C51BF;
+        }
+        p {
+          color: #336b87;
+        }
+        a {
+          background-color: #4C51BF;
+        }
+
+</style>
+<body>
+  {% include "insurance/navbar.html" %}
+<br>
+
+<section id="section-jumbotron" class="jumbotron jumbotron-fluid d-flex justify-content-center align-items-center ">
+  <div class="container text-center" >
+    <h2 class="display-3 text" >Insurance Management System</h2>
+
+    <p class="display-4 d-none d-sm-block">Menggunakan Python Django</p>
+    
+    <p class="lead">Daftarkan Sekarang Untuk Mengajukan Asuransi Pertama Anda</p>
+
+  
+    
+    <a href="/customer/customersignup" class="btn btn-lg btn-danger" style="border-radius: 0%;" style="background-color: #336b87"><i class="fa fa-user" aria-hidden="true" ></i> Log-in Sebagai Pelanggan</a>
+    
+    <br>
+    
+    <br><br>
+
+    <p class="lead text-center" style="color: #4C51BF"> “Mendapatkan Asuransi Adalah Tanggung Jawab Anda Kepada Keluarga Dan Orang Tercinta. Anda Mungkin Membencinya, Tetapi Itu Adalah Tanggung Jawab Anda.”
+    </p>
+  
+  <p class="text-center">- dr.Ricky Alfian Siregar.S.Kom, S.T, S.H, S.Pd</p>
+  </div>  
+</section>
+
+<!-- 
+<div class="jumbotron" style="margin-top: 0px;margin-bottom: 0px;">
+
+ 
+  
+</div> -->
+  {% include "insurance/footer.html" %}
+
+
+</body>
+
+</html>
